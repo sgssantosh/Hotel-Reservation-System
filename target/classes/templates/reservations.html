@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "en" xmls:th="http://www.thymelear.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Desi Hotel: Room Reservations</title>
+    </head>
+    <body>
+        <h1>Welcome to Room Reservations Page</h1>
+        <table>
+            <tr>
+                <td>Room</td>
+                <td>Room Number</td>
+                <td>Guest</td>
+            </tr>
+            <tr th:each ="roomReservation: ${roomReservations}">
+                <td th:text = "${roomReservation.roomName}">Room</td>
+                <td th:text = "${roomReservation.roomNumber}">Room Number</td>
+                <td th:text = "${roomReservation.lastName} != null ? ${roomReservation.lastname} + ', ' + ${roomReservation.firstName} : 'VACANT'">Full Name</td>
+            </tr>
+        </table>
+    </body>
+</html>
